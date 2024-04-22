@@ -1,10 +1,15 @@
-function TodoList ({todos}) {
+function TodoList({ todos, onDelete }) {
     return (
- <>
-    <ul>
-       {todos.map(todo => <li>{todo.text}</li>)}
-    </ul>
-    </>
+        <>
+            <ul>
+                {todos.map((todo, i) => (
+                    <>
+                        <li>{todo.text}</li>
+                        <button onClick={() => onDelete(i)}>삭제</button>
+                    </>
+                ))}
+            </ul>
+        </>
     )
 }
 
